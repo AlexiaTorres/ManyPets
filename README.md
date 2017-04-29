@@ -4,7 +4,7 @@
 To install and run the application
 
 ```
-git clone xxx
+git clone https://github.com/AlexiaTorres/ManyPets.git
 cd manypets
 bundle install
 rails db:migrate
