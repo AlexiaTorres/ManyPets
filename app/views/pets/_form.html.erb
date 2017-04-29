@@ -1,0 +1,40 @@
+<%= render 'layouts/errors', :errors => pet.errors %>
+<div class="row">
+  <div class="col m12">
+    <div class="card-panel white">
+      <%= form_for pet, url: url , method: method do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+
+        <div class="vertical-separator"></div>
+
+        <%= f.radio_button(:gender, 'Male', checked: true) %>
+        <%= f.label(:gender, 'Male', for: 'pet_gender_male') %>
+        <%= f.radio_button(:gender, 'Female') %>
+        <%= f.label(:gender, 'Female', for: 'pet_gender_female') %>
+
+        <div class="vertical-separator"></div>
+
+        <%= f.label :category %>
+        <%= f.select(:category, Pet.categories.keys) %>
+
+        <div class="vertical-separator"></div>
+
+        <%= f.label :alive %>
+        <div class="switch">
+          <label>
+            No
+            <%= f.check_box :alive %>
+            <span class="lever"></span>
+            Yes
+          </label>
+        </div>
+        <div class="vertical-separator-lg"></div>
+        <%= f.submit :class => 'btn btn-primary white-text' %>
+        <%= link_to('back', _back_url, :class => 'btn red')%>
+      <% end %>
+    </div>
+  </div>
+</div>

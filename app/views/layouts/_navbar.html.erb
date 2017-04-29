@@ -1,0 +1,15 @@
+<header class="header">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="<%= root_path %>" class="brand-logo center">
+        <i class="material-icons">pets</i>
+      </a>
+      <%= navbar_menu(
+            [
+              {label: 'Home', path: root_path, controllers: %w[home]},
+              {label: 'Developers', path: developers_path, controllers: %w[developers pets]}
+            ]
+          ) %>
+    </div>
+  </nav>
+</header>

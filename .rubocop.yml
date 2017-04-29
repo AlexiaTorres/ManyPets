@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.2.3
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - db/**/**
+    - config/**/**
+    - script/**/**
+    - test/**/**
+    - Gemfile
+Documentation:
+  Enabled: false

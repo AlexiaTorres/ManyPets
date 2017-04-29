@@ -1,0 +1,28 @@
+<% if flash[:notice] %>
+  <script>
+    $(document).ready(function () {
+      swal({
+          title: 'Nice!!',
+          text: '<%= flash[:notice] %>',
+          type: 'success',
+          allowEscapeKey: true,
+          allowOutsideClick: true,
+          timer: 2000
+      });
+    });
+  </script>
+<% end %>
+
+<% if flash[:error] %>
+    <script>
+        $(document).ready(function () {
+            swal({
+                title: 'Ouuch!!',
+                text: '<%= flash[:error] %>',
+                type: 'error',
+                allowEscapeKey: true,
+                allowOutsideClick: true
+            });
+        });
+    </script>
+<% end %>

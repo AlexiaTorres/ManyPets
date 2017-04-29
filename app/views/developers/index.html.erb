@@ -1,0 +1,14 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Developers</h4></li>
+  <% developers.each do |developer| %>
+      <li class="collection-item">
+        <div>
+          <%= developer.name %>
+          <%= sweet_alert_delete(developer_path(developer), 'Are you sure to delete this developer?', :class => 'secondary-content red-text') %>
+          <%= icon_link_button('edit', edit_developer_path(developer), :class => 'secondary-content') %>
+          <%= icon_link_button('pets', developer_path(developer), :class => 'secondary-content blue-text') %>
+        </div>
+      </li>
+  <% end %>
+</ul>
+<%= icon_link_button('add', developer_path('new'), :class => 'center btn-floating tomato') %>

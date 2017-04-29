@@ -1,0 +1,13 @@
+<% if errors.any? %>
+    <div class="row">
+      <div class="col m12">
+        <div class="card-panel red darken-4 white-text error-card">
+          <ul>
+            <% errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+<% end %>

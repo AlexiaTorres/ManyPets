@@ -1,0 +1,18 @@
+<%= render 'layouts/errors', :errors => developer.errors %>
+<div class="row">
+  <div class="col m12">
+    <div class="card-panel white">
+      <%= form_for developer, url: url, method: method do |f| %>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.submit :class => 'btn btn-primary white-text' %>
+          <%= link_to('back', _back_url, :class => 'btn red')%>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="row">
+  <% @pets.each do |pet| %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="/images/<%= pet.category %>.jpg">
+        </div>
+        <div class="card-content">
+          <p><%= "#{pet.name} - #{pet.age} years #{pet.alive? ? '' : 'R.I.P.'}" %></p>
+          <img src="/images/<%= pet.gender %>.png" alt="" />
+        </div>
+        <div class="card-action">
+          <a href="<%= developer_path(pet.developer) %>"><%= pet.developer.name %></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+            

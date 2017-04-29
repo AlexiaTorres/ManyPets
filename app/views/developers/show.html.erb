@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col m12">
+    <div class="card-panel white">
+      <h4> <%= developer.name %> </h4>
+      <span> <%= developer.email %> </span>
+      <ul class="collection">
+        <% developer.pets.each do |pet| %>
+            <li class="collection-item">
+              <div>
+                <%= pet.name %>
+                <%= icon_link_button('edit', edit_developer_pet_path(developer, pet), :class => 'secondary-content') %>
+              </div>
+            </li>
+        <% end %>
+      </ul>
+
+      <%=  link_to(raw('<i class="material-icons">pets</i>Add Pet'),
+                  new_developer_pet_path(developer),
+                  :class => 'btn btn-primary white-text',
+                  :disabled => developer.pets_limit_reached? ) %>
+
+      <% if developer.pets_limit_reached? %>
+        <h5>Pet limit reached, please upgrade to premium plan</h5>
+      <% end %>
+    </div>
+  </div>
+</div>
+
